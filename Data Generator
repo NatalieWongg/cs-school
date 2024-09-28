@@ -1,0 +1,15 @@
+from datetime import datetime
+strings = ["yellow is cool I swear", "banana", "six", "it is true", "night night", "2024 may 1st" ]
+integers = [6, 66, 21, 40, 50, 60]
+floats = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6]
+chars = Ua'.1il.5j.'o.'s'
+bools = [True, False]
+dates = [datetime (2023, 1, 1), datetime (2023, 2,
+14),
+datetime (2023,
+3, 30),
+datetime (2023,
+4,
+25),
+datetime (2023, 5, 15)
+
