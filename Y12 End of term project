@@ -1,0 +1,32 @@
+DECLARE answer: STRING
+DECLARE questions: ARRAY[1:5,1:2] OF STRING
+DECLARE i, number, currentnum: INTEGER
+DECLARE completedQs: ARRAY[1:5] OF INTEGER
+DECLARE answered: BOOLEAN
+
+questions <- [["How would you write a procedure heading?","PROCEDURE <identifier> (<parameter>: <data type>)"],["How would you write a procedure ending?", "ENDPROCEDURE"],["How would you write a function heading","FUNCTION <identifier> (<parameter>: <data type>) RETURNS <data type>"],["How would you write a function ending?","ENDFUNCTION"],["What is the main difference between a procedure heading and a function heading?","A function heading returns something"]]
+i<- 0
+completedQs <- [-1,-1,-1,-1,-1]
+currentnum <- -1
+WHILE i < 5
+    answered <- FALSE
+    number <- INT(RAND(5)+1)
+    FOR j <- 1 TO 5
+        IF number = completedQs[j] THEN
+            answered <- TRUE
+        ENDIF
+    NEXT j
+    IF answered = FALSE THEN
+        OUTPUT questions[number,1]
+        INPUT answer
+        WHILE answer <> questions [number,2] 
+            OUTPUT "Incorrect answer. Please try again."
+            INPUT answer
+        ENDWHILE
+        OUTPUT "Correct answer"
+        i <- i + 1
+    ENDIF
+    
+    completedQs[i] <- number
+ENDWHILE
+OUTPUT "You got all questions correct!"
