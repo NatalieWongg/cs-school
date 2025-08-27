@@ -1,0 +1,10 @@
+with open("monsters_simple.txt","r") as file:
+    monsters = {}
+
+    for line in file:
+        line = line.strip()
+        key, value = line.split(",",1)
+        monsters[key.strip()] = value.strip()
+
+name = input("Enter monster name: ")
+print("This is its  description:", monsters[name])
