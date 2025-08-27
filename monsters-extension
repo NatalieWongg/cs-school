@@ -1,0 +1,13 @@
+with open("Monsters.txt","r") as file:
+    monsters = {}
+
+    for line in file:
+        parts = line.split(",")
+        name = parts[1].strip()
+        culture = parts[2].strip()
+        description = parts[3].strip()
+
+        monsters[name] = {
+            "culture": culture,
+            "description": description
+        }
