@@ -4,10 +4,38 @@ with open("Monsters.txt","r") as file:
     for line in file:
         parts = line.split(",")
         name = parts[1].strip()
-        culture = parts[2].strip()
+        origin = parts[2].strip()
         description = parts[3].strip()
+        attack = parts[4].strip()
+        defense = parts[5].strip()
+        strength = parts[6].strip()
+        speed = parts[7].strip()
+        intelligence = parts[8].strip()
+        power = parts[9].strip()
+        magic = parts[10].strip()
+        
+
 
         monsters[name] = {
-            "culture": culture,
-            "description": description
+            "origin": origin,
+            "description": description,
+            "attack": attack,
+            "defense": defense,
+            "strength": strength,
+            "speed": speed,
+            "intelligence": intelligence,
+            "power": power,
+            "magic": magic 
         }
+
+name = input("Enter the name of the monster whose encycloaedia entry you want to retrieve: ")
+print(name)
+print("Origin:",monsters[name]['origin'])
+print("Description:",monsters[name]['description'])
+print("Attack:",monsters[name]['attack'])
+print("Defense",monsters[name]['defense'])
+print("Strength:",monsters[name]['strength'])
+print("Speed:",monsters[name]['speed'])
+print("Intelligence:",monsters[name]['intelligence'])
+print("Power:",monsters[name]['power'])
+print("Magic:",monsters[name]['magic'])
